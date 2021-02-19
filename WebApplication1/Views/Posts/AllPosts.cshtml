@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebSite.Models.PostModel>
+
+@{
+    ViewData["Title"] = "AllPostsView";
+}
+<div class="container" style="margin-top:100px;">
+    @foreach (var item in Model)
+    {
+        <div class="row border">
+            <div class="col-8">
+                <div class="post-user-info">
+                    
+                    <p class="post-title">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="GetPost" asp-route-id="@item.PostID">@Html.DisplayFor(modelItem => item.Title)</a>
+                    </p>
+                    <p class="post-user-name">
+                        posted by: @Html.DisplayFor(modelItem => item.PosterName)
+                    </p>
+                    <p class="post-description">
+                        Description: <br>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                    <p class="post-stars">
+                        @if (item.Stars == 1)
+                        {
+                            <img class="post-stars" src= "~/images/1star.png" >
+                        }
+                        @if (item.Stars == 2)
+                        {
+                            <img class="post-stars" src="~/images/2stars.png">
+                        }
+                        @if (item.Stars == 3)
+                        {
+                            <img class="post-stars" src="~/images/3stars.png">
+                        }
+                        @if (item.Stars == 4)
+                        {
+                            <img class="post-stars" src="~/images/4stars.png">
+                        }
+                        @if (item.Stars == 5)
+                        {
+                            <img class="post-stars" src="~/images/5stars.png">
+                        }
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-4">
+                <img class="post-image" src=@Html.DisplayFor(modelItem => item.ImageURL)>
+            </div>
+        </div>
+    }
+</div>

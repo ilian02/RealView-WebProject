@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@model WebSite.Models.PostModel
+
+@{
+    ViewData["Title"] = "GetPost";
+}
+
+<h1 style="margin-top:150px">@Html.DisplayFor(model => model.Title)</h1>
+
+
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+
+            <td><p class="post-info">@Html.DisplayFor(model => model.Title)</p></td>
+            <td>
+                <div class="center-50">
+                    <p class="post-info">Posted by: @Html.DisplayFor(model => model.PosterName)</p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="post-info">@Html.DisplayFor(model => model.Description)</p>
+            </td>
+            <td>
+                <div><img class="post-image" src=@Html.DisplayFor(model => model.ImageURL)></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <p class="post-info">Date: @Html.DisplayFor(model => model.Date)</p>
+            </td>
+            <td>
+                <p class="post-stars post-info">
+                    @if (Model.Stars == 1)
+                    {
+                        <img class="post-stars" src="~/images/1star.png">
+                    }
+                    @if (Model.Stars == 2)
+                    {
+                        <img class="post-stars" src="~/images/2stars.png">
+                    }
+                    @if (Model.Stars == 3)
+                    {
+                        <img class="post-stars" src="~/images/3stars.png">
+                    }
+                    @if (Model.Stars == 4)
+                    {
+                        <img class="post-stars" src="~/images/4stars.png">
+                    }
+                    @if (Model.Stars == 5)
+                    {
+                        <img class="post-stars" src="~/images/5stars.png">
+                    }
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="margin-top:90px">
+    @await Component.InvokeAsync("getComments", new { id = Model.PostID })
+    <hr>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @await Component.InvokeAsync("createNewComment", new { postID = Model.PostID })
+    }
+    else
+    {
+        <p>Log in or register first to comment</p>
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            </li>
+        </ul>
+    }
+</div>

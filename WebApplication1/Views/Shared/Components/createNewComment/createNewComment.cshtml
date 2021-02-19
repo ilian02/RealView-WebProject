@@ -1,0 +1,31 @@
+﻿@model WebSite.Models.CommentModel
+
+<h2>Create a comment.</h2>
+<div class="row">
+    <div class="col">
+        <form asp-action="createComment">
+            <div class="col">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <textarea asp-for="Description" class="form-control" style="resize:none; width:100%; height:50px;" text-wrap:normal" type="text" placeholder="Add your description here required"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Stars" class="control-label"></label>
+                    <input asp-for="Stars" class="form-control" />
+                    <span asp-validation-for="Stars" class="text-danger"></span>
+                </div>
+            </div>
+                <input type="hidden" name="PostID" value="@Model.PostID">
+                <input type="hidden" name="PosterName" value="@Model.PosterName">
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+        </form>
+    </div>
+</div>
+
