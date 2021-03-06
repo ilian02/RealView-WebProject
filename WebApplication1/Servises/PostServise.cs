@@ -14,44 +14,46 @@ namespace WebSite.Servises
 {
     public class PostServise : IPostServise
     {
+        private readonly ICloudinaryService cloudinaryService;
         private readonly ApplicationDbContext AppDbContext;
         public readonly UserManager<IdentityUser> userManager;
 
-        public PostServise(ApplicationDbContext appDbContext, UserManager<IdentityUser> userManager)
+        public PostServise(ApplicationDbContext appDbContext, UserManager<IdentityUser> userManager, ICloudinaryService cloudinaryService)
         {
             this.AppDbContext = appDbContext;
             this.userManager = userManager;
+            this.cloudinaryService = cloudinaryService;
         }
 
         [HttpGet]
         [Route("Posts/GetPost/{id:int}")]
-        public PostModel GetPost([FromQuery (Name = "id")] int id = 1)
+        public PostViewModel GetPost([FromQuery (Name = "id")] int id = 1)
         {
             PostEntity postEntity = AppDbContext.Posts.Find(id);
 
-            PostModel result = new PostModel
+            PostViewModel result = new PostViewModel
             {
-                    PostID = postEntity.ID,
-                    Title = postEntity.Title,
-                    PosterName = postEntity.PosterName,
-                    Description = postEntity.Description,
-                    Date = postEntity.Date,
-                    Stars = postEntity.Stars,
-                    ImageURL = postEntity.ImageURL
+                PostID = postEntity.ID,
+                Title = postEntity.Title,
+                PosterName = postEntity.PosterName,
+                Description = postEntity.Description,
+                Date = postEntity.Date,
+                Stars = postEntity.Stars,
+                ImageURL = postEntity.ImageURL
             };
 
             return result;
         }
 
-        public List<PostModel> GetAllPosts()
+        public List<PostViewModel> GetAllPosts()
         {
             var entities = AppDbContext.Posts.OrderByDescending(c => c.Date).ToList();
 
-            List<PostModel> result = new List<PostModel>();
+            List<PostViewModel> result = new List<PostViewModel>();
 
             foreach (PostEntity post in entities)
             {
-                PostModel postModel = new PostModel
+                PostViewModel postModel = new PostViewModel
                 {
                     PostID = post.ID,
                     Title = post.Title,
@@ -72,11 +74,14 @@ namespace WebSite.Servises
         public async Task<bool> CreatePost(PostModel postModel)
         {
 
+            string url = await this.cloudinaryService.UploadImage(postModel.FileUpload);
+
+
             PostEntity postEntity = new PostEntity
             {
                 Title = postModel.Title,
                 PosterName = postModel.PosterName,
-                ImageURL = postModel.ImageURL,
+                ImageURL = url,
                 Description = postModel.Description,
                 Stars = postModel.Stars,
                 Date = DateTime.Now

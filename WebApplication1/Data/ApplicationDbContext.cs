@@ -17,7 +17,5 @@ namespace WebApplication1.Data
 
         public DbSet<CommentEntity> Comments { get; set; }
         public DbSet<PostEntity> Posts { get; set; }
-        public DbSet<WebSite.Models.PostModel> PostModel { get; set; }
-        public DbSet<WebSite.Models.CommentModel> CommentModel { get; set; }
     }
 }

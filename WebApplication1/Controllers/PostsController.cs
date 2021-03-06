@@ -18,20 +18,22 @@ namespace WebSite.Controllers
         private readonly ILogger<PostsController> _logger;
 
         public readonly UserManager<IdentityUser> userManager;
+        private readonly ICloudinaryService cloudinaryService;
 
         public readonly IPostServise postServise;
 
-        public PostsController(ILogger<PostsController> logger, IPostServise postServise, UserManager<IdentityUser> userManager)
+        public PostsController(ILogger<PostsController> logger, IPostServise postServise, UserManager<IdentityUser> userManager, ICloudinaryService cloudinaryService)
         {
             this._logger = logger;
             this.postServise = postServise;
             this.userManager = userManager;
+            this.cloudinaryService = cloudinaryService;
         }
 
         [HttpGet]
         public IActionResult AllPosts()
         {
-            List <PostModel> postModels = postServise.GetAllPosts();
+            List <PostViewModel> postModels = postServise.GetAllPosts();
             return View(postModels);
         }
 
@@ -39,7 +41,7 @@ namespace WebSite.Controllers
         public IActionResult ProfilePosts(String id)
         {
 
-            List<PostModel> posts = postServise.GetAllPosts().Where(x => x.PosterName == id).ToList();
+            List<PostViewModel> posts = postServise.GetAllPosts().Where(x => x.PosterName == id).ToList();
 
             return View(posts);
         }
@@ -48,7 +50,7 @@ namespace WebSite.Controllers
         [HttpGet]
         public IActionResult GetPostsPageByIndex(int id)
         {
-            List<PostModel> postModels = postServise.GetAllPosts().Skip(10 * (id - 1)).Take(10).ToList();
+            List<PostViewModel> postModels = postServise.GetAllPosts().Skip(10 * (id - 1)).Take(10).ToList();
 
             PaginationModel postForPage = new PaginationModel(postModels, 10, id);
 
@@ -64,7 +66,7 @@ namespace WebSite.Controllers
 
         public IActionResult GetPost(int id)
         {
-            PostModel post = postServise.GetPost(id);
+            PostViewModel post = postServise.GetPost(id);
 
 
             return View(post);

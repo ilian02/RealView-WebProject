@@ -6,17 +6,12 @@
 <hr />
 <div class="row d-flex justify-content-center">
     <div class="col-md-4">
-        <form asp-action="CreatePost">
+        <form asp-action="CreatePost" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" placeholder="Your Title" required/>
+                <input asp-for="Title" class="form-control" placeholder="Your Title" required />
                 <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageURL" class="control-label"></label>
-                <input asp-for="ImageURL" class="form-control" placeholder="Link to image" required/>
-                <span asp-validation-for="ImageURL" class="text-danger"></span>
             </div>
             <div>
                 <div class="form-group">
@@ -26,13 +21,32 @@
                 </div>
             </div>
             <div class="form-group">
-                 <label asp-for="Stars" class="control-label"></label>
-                 <input asp-for="Stars" class="form-control" type="number" placeholder="1 to 5 with numbers" required/>
-                 <span asp-validation-for="Stars" class="text-danger"></span>
-                <div class="form-group">
-                    <br>
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
+                <label asp-for="Stars" class="control-label"></label>
+                <input asp-for="Stars" class="form-control" type="number" placeholder="1 to 5 with numbers" required />
+                <span asp-validation-for="Stars" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FileUpload">Image Upload</label>
+                <input asp-for="FileUpload" class="form-control" placeholder="Image File" type="file" name="fileUpload" accept="image/*" />
+            </div>
+
+            <!--
+    <div class="uploader">
+        <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+        <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="Preview" class="hidden">
+            <div id="start">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                <div>Select an image</div>
+                <div id="notimage" class="hidden">Please select an image</div>
+                <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+            </div>
+        </label>
+    </div>-->
+            <div class="form-group">
+                <br>
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

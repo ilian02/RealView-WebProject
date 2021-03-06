@@ -11,8 +11,8 @@ namespace WebSite.Servises
     {
         Task<bool> CreatePost(PostModel postModel);
         Task<bool> CreateComment(CommentModel commentModel);
-        public List<PostModel> GetAllPosts();
-        public PostModel GetPost(int postId);
+        public List<PostViewModel> GetAllPosts();
+        public PostViewModel GetPost(int postId);
         public List<CommentModel> GetPostComments(int id);
     }
 }

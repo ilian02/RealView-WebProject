@@ -33,6 +33,11 @@ namespace WebApplication1
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
+            services.AddSingleton<ICloudinaryService>(instance => new CloudinaryService(
+               this.Configuration["Cloudinary:CloudName"],
+               this.Configuration["Cloudinary:ApiKey"],
+               this.Configuration["Cloudinary:ApiSecret"]));
+
             services.AddTransient<IPostServise, PostServise>();
 
             services.Configure<IdentityOptions>(options =>
