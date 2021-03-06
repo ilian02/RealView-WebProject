@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="position:fixed; top:0; left:0; right:0; z-index:1300">
             <div class="container" style="max-width:100%">
-                <a href="/Posts/AllPosts/">
+                <a href="/Posts/GetPostsPageByIndex/1">
                     <img style="margin-left:-5px" src="~/images/logo3.png" class="img-responsive front" height="45" width="200" alt="" />
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -41,7 +41,7 @@
                     <li><a href="/Posts/AllPosts/"><i class="fas fa-home"></i>Home</a></li>
                     @if (SignInManager.IsSignedIn(User))
                     {
-                        <li><a asp-area="Identity" asp-page="/Account/Manage/Index"><i class="fas fa-user"></i>Profile</a></li>
+                        <li><a asp-area="" asp-controller="Posts" asp-action="ProfilePosts" asp-route-id="@User.Identity.Name"><i class="fas fa-user"></i>Profile</a></li>
                     }
                     else
                     {

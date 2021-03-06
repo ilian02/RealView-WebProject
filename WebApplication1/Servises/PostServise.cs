@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using WebApplication1.Data;
 using WebApplication1.Entities;
@@ -13,10 +15,12 @@ namespace WebSite.Servises
     public class PostServise : IPostServise
     {
         private readonly ApplicationDbContext AppDbContext;
+        public readonly UserManager<IdentityUser> userManager;
 
-        public PostServise(ApplicationDbContext appDbContext)
+        public PostServise(ApplicationDbContext appDbContext, UserManager<IdentityUser> userManager)
         {
             this.AppDbContext = appDbContext;
+            this.userManager = userManager;
         }
 
         [HttpGet]
@@ -66,7 +70,8 @@ namespace WebSite.Servises
 
         [HttpPost]
         public async Task<bool> CreatePost(PostModel postModel)
-        { 
+        {
+
             PostEntity postEntity = new PostEntity
             {
                 Title = postModel.Title,

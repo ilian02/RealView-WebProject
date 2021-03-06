@@ -15,7 +15,7 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="GetPost" asp-route-id="@item.PostID">@Html.DisplayFor(modelItem => item.Title)</a>
                     </p>
                     <p class="post-user-name">
-                        posted by: @Html.DisplayFor(modelItem => item.PosterName)
+                        posted by: <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="ProfilePosts" asp-route-id="@item.PosterName">@Html.DisplayFor(modelItem => item.PosterName)</a>
                     </p>
                     <p class="post-description">
                         Description: <br>

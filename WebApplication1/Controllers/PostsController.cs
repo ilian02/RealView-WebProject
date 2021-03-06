@@ -32,10 +32,28 @@ namespace WebSite.Controllers
         public IActionResult AllPosts()
         {
             List <PostModel> postModels = postServise.GetAllPosts();
-
             return View(postModels);
         }
 
+        [HttpGet]
+        public IActionResult ProfilePosts(String id)
+        {
+
+            List<PostModel> posts = postServise.GetAllPosts().Where(x => x.PosterName == id).ToList();
+
+            return View(posts);
+        }
+
+
+        [HttpGet]
+        public IActionResult GetPostsPageByIndex(int id)
+        {
+            List<PostModel> postModels = postServise.GetAllPosts().Skip(10 * (id - 1)).Take(10).ToList();
+
+            PaginationModel postForPage = new PaginationModel(postModels, 10, id);
+
+            return View(postForPage);
+        }
 
         [Authorize]
         [HttpGet]
