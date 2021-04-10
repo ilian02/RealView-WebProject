@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,17 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
+
         private readonly ILogger<HomeController> _logger;
 
         public readonly IPostServise postServise;
-        public HomeController(ILogger<HomeController> logger, IPostServise postServise)
+
+        private readonly UserManager<IdentityUser> userManager;
+        public HomeController(ILogger<HomeController> logger, IPostServise postServise, UserManager<IdentityUser> userManager )
         {
             this.postServise = postServise;
+            this.userManager = userManager;
+
             _logger = logger;
         }
 
@@ -44,6 +50,14 @@ namespace WebApplication1.Controllers
 
 
             return View(posts);
+        }
+        public async Task<IActionResult> UpdateEmail(string email, string id)
+        {
+            IdentityUser loginUser = await userManager.FindByNameAsync(id);
+            loginUser.Email = email;
+            await userManager.UpdateAsync(loginUser);
+
+            return RedirectToAction(nameof(Profile), new { id = id }) ;
         }
     }
 }
