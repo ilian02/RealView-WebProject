@@ -4,15 +4,15 @@
 }
 
 
-<div class="container" style="margin-top:100px;">
+<div class="container scroll-standalone" style="margin-top:100px;">
     @foreach (var item in Model.posts)
     {
-        <div class="row border">
+        <div class="row border" asp-area="" asp-controller="Posts" asp-action="GetPost" asp-route-id="@item.PostID">
             <div class="col-8">
                 <div class="post-user-info">
 
                     <p class="post-title">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="GetPost" asp-route-id="@item.PostID">@Html.DisplayFor(modelItem => item.Title)</a>
+                        <a class="nav-link text-dark"  asp-controller="Posts" asp-action="GetPost" asp-route-id="@item.PostID">@Html.DisplayFor(modelItem => item.Title)</a>
                     </p>
                     <p class="post-user-name">
                         posted by: <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="ProfilePosts" asp-route-id="@item.PosterName">@Html.DisplayFor(modelItem => item.PosterName)</a>
@@ -61,9 +61,10 @@
         <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="GetPostsPageByIndex" asp-route-id=@(@Model.index - 1)>Previous Page</a>
     </p>
     }
-
+    @if (Model.posts.Count == 10) 
+    {
     <p class="next-button">
         <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="GetPostsPageByIndex" asp-route-id=@(@Model.index + 1)>Next page</a>
     </p>
-
+    }
 </div>

@@ -86,6 +86,10 @@ namespace WebSite.Servises
                 Stars = postModel.Stars,
                 Date = DateTime.Now
             };
+            if (postEntity.Stars<0 && postEntity.Stars>5)
+            {
+                throw new Exception("Stars should between 0 and 5");
+            }
 
 
             bool result = await this.AppDbContext.AddAsync(postEntity) != null;

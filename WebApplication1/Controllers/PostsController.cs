@@ -42,6 +42,7 @@ namespace WebSite.Controllers
         {
 
             List<PostViewModel> posts = postServise.GetAllPosts().Where(x => x.PosterName == id).ToList();
+             
 
             return View(posts);
         }
