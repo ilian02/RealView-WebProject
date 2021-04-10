@@ -15,7 +15,7 @@
             <div class="col">
                 <div class="form-group">
                     <label asp-for="Stars" class="control-label"></label>
-                    <input asp-for="Stars" class="form-control" />
+                    <input asp-for="Stars" class="form-control" type="number" min="1" max="5" placeholder="1 to 5 with numbers" required />                
                     <span asp-validation-for="Stars" class="text-danger"></span>
                 </div>
             </div>

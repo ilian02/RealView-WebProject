@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Models;
+using WebSite.Models;
+using WebSite.Servises;
 
 namespace WebApplication1.Controllers
 {
@@ -13,8 +15,10 @@ namespace WebApplication1.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public readonly IPostServise postServise;
+        public HomeController(ILogger<HomeController> logger, IPostServise postServise)
         {
+            this.postServise = postServise;
             _logger = logger;
         }
 
@@ -34,9 +38,12 @@ namespace WebApplication1.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult Profile()
+        public IActionResult Profile(string id)
         {
-            return View();
+            List<PostViewModel> posts = postServise.GetAllPosts().Where(x => x.PosterName == id).ToList();
+
+
+            return View(posts);
         }
     }
 }

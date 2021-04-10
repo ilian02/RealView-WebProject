@@ -28,7 +28,8 @@ namespace WebSite.Controllers
             this.postServise = postServise;
             this.userManager = userManager;
             this.cloudinaryService = cloudinaryService;
-        }
+            
+    }
 
         [HttpGet]
         public IActionResult AllPosts()
