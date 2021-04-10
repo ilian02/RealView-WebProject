@@ -49,6 +49,7 @@ namespace WebSite.Areas.Identity.Pages.Account
             [Display(Name = "Username")]
             public string UserName { get; set; }
 
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]

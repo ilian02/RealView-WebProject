@@ -20,43 +20,43 @@
             <div class="container" style="max-width:100%">
                 <a href="/Posts/GetPostsPageByIndex/1">
                     <img style="margin-left:-5px" src="~/images/logo3.png" class="img-responsive front" height="45" width="200" alt="" />
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                        <ul class="navbar-nav flex-grow-1">
-                        </ul>
-                        <partial name="_LoginPartial" />
-                    </div>
-            </div>
-        </nav>
-        <div class="wrapper">
-            <div class="sidebar">
-                <ul>
-                    <br>
-                    <br>
-                    <br>
-                    <li><a href="/Posts/AllPosts/"><i class="fas fa-home"></i>Home</a></li>
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <li><a asp-area="" asp-controller="Posts" asp-action="ProfilePosts" asp-route-id="@User.Identity.Name"><i class="fas fa-user"></i>Profile</a></li>
-                    }
-                    else
-                    {
-                        <li><a href="/Identity/Account/Login/"><i class="fas fa-user"></i>Profile</a></li>
-                    }
-                    <li><a href="/Posts/CreatePost"><i class="fas fa-arrow-circle-up"></i>Create Post</a></li>
-                    <li><a href="/Home/Contact"><i class="fas fa-address-book"></i>Contact</a></li>
-                </ul>
-                <div class="social_media">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
-        </div>
+        </nav>
+
     </header>
+    <div class="wrapper">
+        <div class="sidebar">
+            <ul>
+
+                <li><a href="/Posts/GetPostsPageByIndex/1/"><i class="fas fa-home"></i>Home</a></li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                   // <li class=" nav-item active"><a asp-area="" asp-controller="Home" asp-action="Profile" asp-route-id="@User.Identity.Name"><i class="fas fa-user"></i>Profile</a></li>
+                   <li class="nav-item active"><a asp-controller="Home" asp-action="Profile" asp-route-id="@User.Identity.Name"><i class="fas fa-user"></i>Profile</a></li>
+                }
+                else
+                {
+                    <li><a href="/Identity/Account/Login/"><i class="fas fa-user"></i>Profile</a></li>
+                }
+                <li><a href="/Posts/CreatePost"><i class="fas fa-arrow-circle-up"></i>Create Post</a></li>
+                <li><a href="/Home/Contact"><i class="fas fa-address-book"></i>Contact</a></li>
+            </ul>
+            <div class="social_media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <main role="main" class="pb-3">

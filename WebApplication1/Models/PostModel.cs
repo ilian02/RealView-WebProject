@@ -15,7 +15,8 @@ namespace WebSite.Models
         public DateTime Date { get; set; }
         public String PosterName { get; set; }
         public String Description { get; set; }
-        public int Stars { get; set; }
+        
+        public int Stars { get; set; }      
         public IFormFile FileUpload { get; set; }
     }
 }
