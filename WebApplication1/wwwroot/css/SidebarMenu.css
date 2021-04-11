@@ -21,7 +21,7 @@ body {
 }
 
     .wrapper .sidebar {
-        width: 243px;
+        width: 220px !important;
         height: calc(100% - 3.9rem);
         background: #4b4276;
         position: fixed
