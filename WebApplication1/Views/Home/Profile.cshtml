@@ -30,6 +30,8 @@ div class="container">
                     </div>
                 </div>
             </div>
+            @if (@UserManager.GetUserName(User) == Model.Last().PosterName)
+            {
             <div class="card mt-3">
                 <ul class="list-group list-group-flush">
                    
@@ -48,7 +50,9 @@ div class="container">
 
                 </ul>
             </div>
+            }
         </div>
+            
 
         @if (@Model != null)
         {

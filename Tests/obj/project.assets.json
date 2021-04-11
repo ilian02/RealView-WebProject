@@ -505,11 +505,11 @@
           "lib/netstandard1.3/Microsoft.DotNet.InternalAbstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/5.0.2": {
+      "Microsoft.EntityFrameworkCore/5.0.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.2",
-          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.2",
+          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.5",
+          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.5",
           "Microsoft.Extensions.Caching.Memory": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
           "Microsoft.Extensions.Logging": "5.0.0",
@@ -524,7 +524,7 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/5.0.2": {
+      "Microsoft.EntityFrameworkCore.Abstractions/5.0.5": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
@@ -533,7 +533,7 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/5.0.2": {
+      "Microsoft.EntityFrameworkCore.Analyzers/5.0.5": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -557,6 +557,18 @@
         },
         "build": {
           "build/netcoreapp3.0/_._": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.InMemory/5.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/5.0.2": {
@@ -2680,9 +2692,12 @@
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.2",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.2",
           "Microsoft.AspNetCore.Identity.UI": "5.0.2",
+          "Microsoft.EntityFrameworkCore.InMemory": "5.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.2",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
+          "NUnit": "3.13.1",
+          "NUnit3TestAdapter": "3.17.0"
         },
         "compile": {
           "bin/placeholder/WebSite.dll": {}
@@ -3427,45 +3442,45 @@
         "microsoft.dotnet.internalabstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore/5.0.2": {
-      "sha512": "N2OZJWngaR5ydwdp2YH18ag3LN9DK0iCBPJyJ1DNSlI1rSZqmYmtOdPHoM6Wwwvbkw1WVhVQ/1w/8zr4h74EPg==",
+    "Microsoft.EntityFrameworkCore/5.0.5": {
+      "sha512": "lBIGKXhduT94Qats0ImMma9NWnsSLhz04JdD+Mi7DeCDPd3hiA668jREzCiLb9FqcmAIrLx8pxIo9cwjEHfYtQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/5.0.2",
+      "path": "microsoft.entityframeworkcore/5.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.5.0.2.nupkg.sha512",
+        "microsoft.entityframeworkcore.5.0.5.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/5.0.2": {
-      "sha512": "69nxyTJwzua85QQB7TWrxCyzHvDwjYWzGLKIQVoLGLd5zG4ApJYMyMGllHGf8pmYiQ6FS7MBZuAwONSv62nkhQ==",
+    "Microsoft.EntityFrameworkCore.Abstractions/5.0.5": {
+      "sha512": "jS7+hySzNS9wCmREbWTVaa5EA+aLT7wb1Si1jhMgAiGrbLQSj6wPnS8WbhO5a7iAq45pDEK0KghtrPDFjfTxVw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/5.0.2",
+      "path": "microsoft.entityframeworkcore.abstractions/5.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.5.0.2.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.5.0.5.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/5.0.2": {
-      "sha512": "kh5B6Hs2dQ7kBuUXXGAfJAZovJDEXMlO3r/xBnkaRqItlvY+TLUvAY+MXTOfX96lx4SxsrecZ2vnHs4D26nedA==",
+    "Microsoft.EntityFrameworkCore.Analyzers/5.0.5": {
+      "sha512": "czVyD5h0etXlrFHln0GPwlhmNm4yFe8vA/xfW/oN26OT8AAWkA6YPjr+z68/kmPqMWFo8UHxvDBZ9g2TiJY9qQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/5.0.2",
+      "path": "microsoft.entityframeworkcore.analyzers/5.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.5.0.2.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.5.0.5.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -3482,6 +3497,20 @@
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.xml",
         "microsoft.entityframeworkcore.design.5.0.2.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/5.0.5": {
+      "sha512": "hJMrS3eI01HGx1zaTr8KSRB5yK+RkCammBGvQ7uKDjtuhqjA0iF8aBg0cGVDzSvN3Eh37ydc1ZH5JbblBcBs+g==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/5.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.5.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/5.0.2": {
@@ -5588,7 +5617,7 @@
       ]
     },
     "System.Composition/1.0.31": {
-      "sha512": "I+D26qpYdoklyAVUdqwUBrEIckMNjAYnuPJy/h9dsQItpQwVREkDFs4b4tkBza0kT2Yk48Lcfsv2QQ9hWsh9Iw==",
+      "sha512": "CbzwbjxT04VU+JzQuPOYfUCybzBtbGZdqGJS9482dDBoBHbt3Zz0QAJ/Cjzpmq5xdL+hhW4FYWf/3wq2OCVXgg==",
       "type": "package",
       "path": "system.composition/1.0.31",
       "files": [
@@ -5631,7 +5660,7 @@
       ]
     },
     "System.Composition.Hosting/1.0.31": {
-      "sha512": "fN1bT4RX4vUqjbgoyuJFVUizAl2mYF5VAb+bVIxIYZSSc0BdnX+yGAxcavxJuDDCQ1K+/mdpgyEFc8e9ikjvrg==",
+      "sha512": "KlZ4qkaa1p/U2WKr353XeQ9bjrxBwn9FcD5k9WFEuV1MloDMnTnhUwQU7h1WigvsCYykzoRdnDLq33wnUPwBeg==",
       "type": "package",
       "path": "system.composition.hosting/1.0.31",
       "files": [
@@ -7765,7 +7794,7 @@
       ]
     },
     "System.Security.Cryptography.Cng/4.5.0": {
-      "sha512": "WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==",
+      "sha512": "O4tqXxWCD8y1IU1VTgzbuBFwoRahrADhDUxHjwezhHCsqyFNyQ5EytjWBxu0EsZuH14b4UO2pFkG063K2h/9Ug==",
       "type": "package",
       "path": "system.security.cryptography.cng/4.5.0",
       "files": [
@@ -8197,7 +8226,7 @@
       ]
     },
     "System.Text.Encodings.Web/4.5.0": {
-      "sha512": "Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
+      "sha512": "JF+wDdfFiRl3rz3dPMfR6aR568AW2J5CUMmhSflgHDz4zbVK4/00ax8UHnHyEMvblPewgNugjuA4oyoL8Pex2g==",
       "type": "package",
       "path": "system.text.encodings.web/4.5.0",
       "files": [
@@ -8913,23 +8942,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vasil\\.nuget\\packages\\": {},
+    "C:\\Users\\АлександърДиманачки\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\Tests\\Tests.csproj",
+      "projectUniqueName": "D:\\IT cariera\\RealView\\RealView-WebProject\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\vasil\\.nuget\\packages\\",
-      "outputPath": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\Tests\\obj\\",
+      "projectPath": "D:\\IT cariera\\RealView\\RealView-WebProject\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\АлександърДиманачки\\.nuget\\packages\\",
+      "outputPath": "D:\\IT cariera\\RealView\\RealView-WebProject\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\vasil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\АлександърДиманачки\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8943,8 +8972,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\WebApplication1\\WebSite.csproj": {
-              "projectPath": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\WebApplication1\\WebSite.csproj"
+            "D:\\IT cariera\\RealView\\RealView-WebProject\\WebApplication1\\WebSite.csproj": {
+              "projectPath": "D:\\IT cariera\\RealView\\RealView-WebProject\\WebApplication1\\WebSite.csproj"
             }
           }
         }
@@ -8990,8 +9019,28 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: NUnit from 3.13.1 to 3.12.0. Reference the package directly from the project to select a different version. \r\n Tests -> WebSite -> NUnit (>= 3.13.1) \r\n Tests -> NUnit (>= 3.12.0)",
+      "libraryId": "NUnit",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: NUnit3TestAdapter from 3.17.0 to 3.16.1. Reference the package directly from the project to select a different version. \r\n Tests -> WebSite -> NUnit3TestAdapter (>= 3.17.0) \r\n Tests -> NUnit3TestAdapter (>= 3.16.1)",
+      "libraryId": "NUnit3TestAdapter",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

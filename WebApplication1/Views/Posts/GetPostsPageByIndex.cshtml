@@ -61,7 +61,7 @@
         <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="GetPostsPageByIndex" asp-route-id=@(@Model.index - 1)>Previous Page</a>
     </p>
     }
-    @if (Model.posts.Count == 10) 
+    @if (Model.posts.Count == 5) 
     {
     <p class="next-button">
         <a class="nav-link text-dark" asp-area="" asp-controller="Posts" asp-action="GetPostsPageByIndex" asp-route-id=@(@Model.index + 1)>Next page</a>

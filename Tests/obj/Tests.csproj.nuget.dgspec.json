@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\Tests\\Tests.csproj": {}
+    "D:\\IT cariera\\RealView\\RealView-WebProject\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\Tests\\Tests.csproj": {
+    "D:\\IT cariera\\RealView\\RealView-WebProject\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\Tests\\Tests.csproj",
+        "projectUniqueName": "D:\\IT cariera\\RealView\\RealView-WebProject\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\vasil\\.nuget\\packages\\",
-        "outputPath": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\Tests\\obj\\",
+        "projectPath": "D:\\IT cariera\\RealView\\RealView-WebProject\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\АлександърДиманачки\\.nuget\\packages\\",
+        "outputPath": "D:\\IT cariera\\RealView\\RealView-WebProject\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\vasil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\АлександърДиманачки\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,8 +31,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\WebApplication1\\WebSite.csproj": {
-                "projectPath": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\WebApplication1\\WebSite.csproj"
+              "D:\\IT cariera\\RealView\\RealView-WebProject\\WebApplication1\\WebSite.csproj": {
+                "projectPath": "D:\\IT cariera\\RealView\\RealView-WebProject\\WebApplication1\\WebSite.csproj"
               }
             }
           }
@@ -78,24 +78,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\WebApplication1\\WebSite.csproj": {
+    "D:\\IT cariera\\RealView\\RealView-WebProject\\WebApplication1\\WebSite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\WebApplication1\\WebSite.csproj",
+        "projectUniqueName": "D:\\IT cariera\\RealView\\RealView-WebProject\\WebApplication1\\WebSite.csproj",
         "projectName": "WebSite",
-        "projectPath": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\WebApplication1\\WebSite.csproj",
-        "packagesPath": "C:\\Users\\vasil\\.nuget\\packages\\",
-        "outputPath": "D:\\IT kariera\\Приложения\\Github repositories\\RealView-WebProject\\WebApplication1\\obj\\",
+        "projectPath": "D:\\IT cariera\\RealView\\RealView-WebProject\\WebApplication1\\WebSite.csproj",
+        "packagesPath": "C:\\Users\\АлександърДиманачки\\.nuget\\packages\\",
+        "outputPath": "D:\\IT cariera\\RealView\\RealView-WebProject\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\vasil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\АлександърДиманачки\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -137,6 +137,10 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -148,6 +152,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.17.0, )"
             }
           },
           "imports": [
@@ -168,7 +180,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

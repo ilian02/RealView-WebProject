@@ -50,9 +50,9 @@ namespace WebSite.Controllers
         [HttpGet]
         public IActionResult GetPostsPageByIndex(int id)
         {
-            List<PostViewModel> postModels = postServise.GetAllPosts().Skip(10 * (id - 1)).Take(10).ToList();
+            List<PostViewModel> postModels = postServise.GetAllPosts().Skip(5 * (id - 1)).Take(5).ToList();
 
-            PaginationModel postForPage = new PaginationModel(postModels, 10, id);
+            PaginationModel postForPage = new PaginationModel(postModels, 5, id);
 
             return View(postForPage);
         }
