@@ -15,16 +15,14 @@ namespace WebSite.Controllers
 {
     public class PostsController : Controller
     {
-        private readonly ILogger<PostsController> _logger;
 
         public readonly UserManager<IdentityUser> userManager;
         private readonly ICloudinaryService cloudinaryService;
 
         public readonly IPostServise postServise;
 
-        public PostsController(ILogger<PostsController> logger, IPostServise postServise, UserManager<IdentityUser> userManager, ICloudinaryService cloudinaryService)
+        public PostsController(IPostServise postServise, UserManager<IdentityUser> userManager, ICloudinaryService cloudinaryService)
         {
-            this._logger = logger;
             this.postServise = postServise;
             this.userManager = userManager;
             this.cloudinaryService = cloudinaryService;
